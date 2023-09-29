@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+   <link rel="stylesheet" media="all" href="port.css"/>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+   <script src="https://kit.fontawesome.com/e7cca4e1bc.js" crossorigin="anonymous"></script>
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        function sendEmail(){
+        (function () {
+            emailjs.init('sqbPNgySeq8cYc4BA');
+        })();
+        var params = {
+            name : document.getElementById("name").value,
+            mail : document.getElementById("mail").value,
+            text : document.getElementById("text").value
+        }
+        const serviceId = "service_qb2xrvn";
+        const templateId = "template_9dfytbh";
+let messageele = document.getElementById("message-send");
+        emailjs.send(serviceId,templateId,params).then((res)=>{
+                messageele.textContent = "Message Sent";
+                messageele.style.color = "green"
+                messageele.style.fontSize="30px";
+
+                document.getElementById("name").value = "";
+                document.getElementById("mail").value = "";
+                document.getElementById("text").value = "";
+            setTimeout(function(){
+                messageele.textContent = ""
+            },2000)
+        })
+        .catch((error)=> console.log(error))
+    }
+    </script>
+   
+
+</head>
+<body>
+
+<nav class="header-container fixed-top" id="header-contain">
+    <div class="header-container-inside">
+    <img src="images/pngtree-cartoon-man-avatar-vector-ilustration-png-image_6111064.jpg.png" class="images-icon"/>
+    <h2 class="ml-2 head-nav">Reddy's Portfolio</h2>
+    </div>
+    <div class="btn-container">
+        <button><i class="bi bi-lightbulb-fill" id="darkmode" onclick="changeThemeMoon()"></i>OFF</button>
+        <button><i class="bi bi-lightbulb" id="lightmode" onclick="changeThemesun()"></i>ON</button>
+</div>
+    <div class="header-link">
+        <a class="innerLink" href="#Home">Home</a>
+        <a class="innerLink" href="#about">About</a>
+        <a class="innerLink">Projects</a>
+    </div>
+</nav>
+<div id="total-container">
+<div class="Home pt-5 pb-5" id="Home">
+    <div class="home-inner">
+    <h3>Hello I'm</h3>
+    <h1 class="Home-name">Reddysai Kanthuri</h1>
+    <div>
+        <a href="https://www.facebook.com/reddysai.sai.14" target="_self"><i class="fa-brands fa-facebook icon-link"></i></a>
+        <a href="https://www.linkedin.com/in/kanthuri-reddysai-621990251" target="_self"><i class="fa-brands fa-linkedin icon-link ml-3"></i></a>
+        <a href="https://www.instagram.com/kanthuri_reddy_sai/" target="_self"><i class="bi bi-instagram icon-link ml-3"></i></a>
+        
+        </div>
+    </div>
+    <div>
+    <img src="images/1692633883646.jpg" class="image-home"/>   
+</div>
+</div>
+<div class="About pt-5 pb-5" id="about">
+    <div>
+        <img src="images/pngtree-cartoon-man-avatar-vector-ilustration-png-image_6111064.jpg.png" class="About-image"/>
+    </div>
+    <div class="About-desc" id="aboutdesc">
+        <h2 class="about-head">About :-</h2>
+        <P class="text-black" id="paraabout">As a Recent Graduatee I have true potential to build scaleble webpages.And i am very eager to work in a reputed organization which will help to improve my skills for the growth of my career as well as organization.</P>
+    </div>
+</div>
+<div class="Qualification pt-5 pb-5" id="Qualification">
+    <ol class="Qualification-inner" id="Qualification1">
+        <h2 class="Qualification-head">Qualification :-</h2>
+        <li>Completed SSC with <span class="Qualification-span">9.7</span> CGPA in 2017</li>
+        <li>Completed Graduation with <span class="Qualification-span">8.35</span> CGPA in 2023 [IIIT Rk Valley]</li>
+    </ol>
+    <ol class="Qualification-inner2" id="Qualification2">
+        <h2 class="Qualification-head">Skills :-</h2>
+        <li>HTMl AND CSS</li>
+        <li>PYTHON</li>
+        <li>JAVASCRIPT</li>
+        <li>SQL</li>
+        <li>BOOTSTRAP & FLEXBOX</li>
+        <li>NODE.JS & EXPRESS.JS</li>
+        <li>REACT.JS</li>
+    </ol>
+    <ol class="Qualification-inner3" data-aos="fade-up-left" id="Qualification3">
+        <h2 class="Qualification-head">Certifications:-</h2>
+        <li><a href="https://certificates.ccbp.in/intensive/static-website?id=HIFIKSPCEF" target="_self">Static Website</a></li>
+        <li><a href="https://certificates.ccbp.in/intensive/dynamic-web-application?id=TSKHPFDLPB" target="_self">Dynamic Web Application</a></li>
+        <li><a href="https://certificates.ccbp.in/intensive/responsive-website?id=JMTHPCQIBN" target="_self">Responsive Website</a></li>
+        <li><a href="https://certificates.ccbp.in/intensive/programming-foundations?id=UPEXHQLGTP" target="_self">Python</a></li>
+        <li><a href="https://certificates.ccbp.in/intensive/javascript-essentials?id=PPVDPLLRBO" target="_self">javascript-essentials</a></li>
+    </ol>
+</div>
+<div>
+    <h1 class="text-center">Projects</h1>
+    </div>
+<div class="Projects pt-5 pb-5" id="Projects">
+    <div class="Projects-inner1">
+        <img src="images/foodmunch1.png" class="w-100 image-Project"/>
+        <h2>Food Munch Website</h2>
+    </div>
+    <div class="Projects-inner1 mt-5">
+        <img src="images/todo.png" class="w-100 image-Project"/>
+        <h2>Todo-List Application</h2>
+    </div>
+    <div class="Projects-inner1 mt-5">
+        <img src="images/wiki.png" class="w-100 image-Project"/>
+        <h2>Wikipedia Search Application</h2>
+    </div>
+    <div class="Projects-inner1 mt-5">
+        <img src="images/crud2.png" class="w-100 image-Project"/>
+        <h2>CRUD-Operations On SQL Database</h2>
+    </div>
+    <div class="Projects-inner1 mt-5">
+        <img src="images/portfolio.png" class="w-100 image-Project"/>
+        <h2>Portfolio Website</h2>
+    </div>
+</div>
+<h1 class="text-center mt-5">Contact Me</h1>
+<div class="Contact pb-5 pt-5 mt-5 mb-4">
+    <div>
+        <img src="images/contact.avif" class="contact-image"/>
+    </div>
+    <div class="form-container p-4 mb-5">
+        <div id="form">
+            <label for="name" class="mt-2 label">Name</label>
+            <input type="text" class="form-control label" id="name" name="name"/>
+            <label for="mail" class="mt-2 label">Mail</label>
+            <input type="text" id="mail" class="form-control label" name="mail"/>
+            <label for="text" class="mt-2 label">Message</label>
+            <textarea cols="35" rows="6" id="text" class="form-control label" name="text"></textarea>
+            <p id="message-send"></p>
+            <div class="">
+            <button class="btn btn-primary" onclick="sendEmail()">Send <i class="bi bi-send"></i></button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <h1 class="text-center mb-5">!!!! Thank You For Visiting !!!!</h1>
+</div>
+</div>
+</body>
+</html>
